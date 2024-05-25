@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Hypothesis-driven Development</h1>
+    <form id="hdd">
+
+        <p>We believe that <span><input type="text" required placeholder="[this capability]" name=""
+                    id="capability"></span></p>
+        <p>Will result in <span><input type="text" required placeholder="[this outcome]" name="" id="outcome"></span>
+        </p>
+        <p>We Will know we have succeeded when <span><input type="text" size="50" required
+                    placeholder="[we see a measureable signal]" name="" id="signal"></span></p>
+        <button>Format</button>
+    </form>
+    <p id="output"></p>
+    <script>
+        const outputTag = document.querySelector('#output');
+        const formTag = document.querySelector('#hdd');
+        formTag.addEventListener('submit', format);
+
+        function format(e) {
+            e.preventDefault();
+
+            if (formTag.checkValidity()) {
+                outputTag.innerHTML = `We believe that <strong>${capability.value}</strong><br>` +
+                    `Will result in <strong>${outcome.value}</strong><br>` +
+                    `We Will know we have succeeded when <strong>${signal.value}</strong><br>`;
+
+            }
+            return false;
+        }
+    </script>
+</body>
+
+</html>
