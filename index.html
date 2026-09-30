@@ -14,6 +14,7 @@
 
 <body>
     <h1>Hypothesis-Driven Development</h1>
+    <h2>Hypothesis-Driven Development Inputs</h2>
     <form id="hdd">
 
         <p>We believe that <span><input type="text" required placeholder="[this capability]" name=""
@@ -34,7 +35,7 @@
             e.preventDefault();
 
             if (formTag.checkValidity()) {
-                outputTag.innerHTML = `<H1>Hypothesis-Driven Development (HHD) assertions</H1>We believe that <strong>${capability.value}</strong><br>` +
+                outputTag.innerHTML = `<H2>Hypothesis-Driven Development (HHD) assertions</H2>We believe that <strong>${capability.value}</strong><br>` +
                     `Will result in <strong>${outcome.value}</strong><br>` +
                     `We will know we have succeeded when <strong>${signal.value}</strong><br>`;
 
